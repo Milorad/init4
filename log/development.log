@@ -767,3 +767,34 @@ Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatc
 [0m
   [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
+
+
+Started GET "/products" for 192.168.0.129 at 2011-03-22 14:29:12 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT "products".* FROM "products"[0m
+Rendered products/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 50ms (Views: 39.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/test.png" for 192.168.0.129 at 2011-03-22 14:29:13 +0100
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/products/new" for 192.168.0.129 at 2011-03-22 14:29:14 +0100
+  Processing by ProductsController#new as HTML
+Rendered products/_form.html.erb (8.8ms)
+Rendered products/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 30ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 192.168.0.129 at 2011-03-22 14:29:20 +0100
+  Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zFhs/TO5/Ap6n6O/zli236KOVZnCVdWrLkZWeWHrTs0=", "product"=>{"title"=>"öljk", "description"=>"jölk", "image_url"=>"öljk", "price"=>"a"}, "commit"=>"Create Product"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products"."id" FROM "products" WHERE ("products"."title" = 'öljk') LIMIT 1
+Rendered products/_form.html.erb (7.1ms)
+Rendered products/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 42ms (Views: 17.1ms | ActiveRecord: 0.2ms)
