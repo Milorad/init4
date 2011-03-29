@@ -798,3 +798,500 @@ Started POST "/products" for 192.168.0.129 at 2011-03-22 14:29:20 +0100
 Rendered products/_form.html.erb (7.1ms)
 Rendered products/new.html.erb within layouts/application (10.6ms)
 Completed 200 OK in 42ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 192.168.0.129 at 2011-03-29 13:07:15 +0200
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.6ms)[0m  [1mSELECT "products".* FROM "products"[0m
+Rendered products/index.html.erb within layouts/application (159.6ms)
+Completed 200 OK in 291ms (Views: 180.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/products" for 192.168.0.111 at 2011-03-29 13:08:30 +0200
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (3.3ms)[0m  SELECT "products".* FROM "products"
+Rendered products/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 59ms (Views: 20.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/images/test.png" for 192.168.0.111 at 2011-03-29 13:08:31 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/products" for 192.168.0.111 at 2011-03-29 13:21:31 +0200
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+Rendered products/index.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 86ms (Views: 60.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/test.png" for 192.168.0.111 at 2011-03-29 13:21:31 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 13:21:35 +0200
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/store" for 192.168.0.111 at 2011-03-29 13:21:37 +0200
+
+ActionController::RoutingError (No route matches "/store"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/store" for 192.168.0.111 at 2011-03-29 13:48:56 +0200
+
+ActionController::RoutingError (No route matches "/store"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 13:49:46 +0200
+  Processing by StoreController#index as HTML
+Rendered store/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/store/index" for 192.168.0.111 at 2011-03-29 13:49:56 +0200
+
+ActionController::RoutingError (No route matches "/store/index"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/store/index.html" for 192.168.0.111 at 2011-03-29 13:49:59 +0200
+
+ActionController::RoutingError (No route matches "/store/index.html"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 13:58:43 +0200
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.6ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY init4Shop[0m
+SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop
+Completed   in 93ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop):
+  app/controllers/store_controller.rb:3:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (29.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.4ms)
+
+
+Started GET "/store/index" for 192.168.0.111 at 2011-03-29 13:58:55 +0200
+
+ActionController::RoutingError (No route matches "/store/index"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.6ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
+
+
+Started GET "/store/index" for 192.168.0.111 at 2011-03-29 14:04:58 +0200
+
+ActionController::RoutingError (No route matches "/store/index"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 14:05:15 +0200
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products" ORDER BY init4Shop
+SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop
+Completed   in 11ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop):
+  app/controllers/store_controller.rb:3:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 14:07:30 +0200
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY init4Shop[0m
+SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop
+Completed   in 19ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop):
+  app/controllers/store_controller.rb:3:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (44.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (53.5ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.7ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
+
+
+Started GET "/store/index" for 192.168.0.111 at 2011-03-29 14:09:46 +0200
+
+ActionController::RoutingError (No route matches "/store/index"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/store" for 192.168.0.111 at 2011-03-29 14:09:51 +0200
+
+ActionController::RoutingError (No route matches "/store"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 14:09:56 +0200
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products" ORDER BY init4Shop
+SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop
+Completed   in 9ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop):
+  app/controllers/store_controller.rb:3:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/store" for 192.168.0.111 at 2011-03-29 14:10:11 +0200
+
+ActionController::RoutingError (No route matches "/store"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/products" for 192.168.0.111 at 2011-03-29 14:10:50 +0200
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY init4Shop[0m
+SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop
+Completed   in 11ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: init4Shop: SELECT "products".* FROM "products" ORDER BY init4Shop):
+  app/controllers/products_controller.rb:5:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
+
+
+Started GET "/products" for 192.168.0.111 at 2011-03-29 14:14:49 +0200
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products"
+Rendered products/index.html.erb within layouts/application (157.8ms)
+Completed 200 OK in 176ms (Views: 164.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/logo.png" for 192.168.0.111 at 2011-03-29 14:14:50 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/images/test.png" for 192.168.0.111 at 2011-03-29 14:14:50 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 14:14:57 +0200
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+Rendered store/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 49ms (Views: 39.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/logo.png" for 192.168.0.111 at 2011-03-29 14:14:57 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/test.png" for 192.168.0.111 at 2011-03-29 14:14:57 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.1ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.3ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 14:18:56 +0200
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.8ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 29ms (Views: 19.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/logo.png" for 192.168.0.111 at 2011-03-29 14:18:57 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/test.png" for 192.168.0.111 at 2011-03-29 14:18:57 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 14:19:26 +0200
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 57ms (Views: 16.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/logo.png" for 192.168.0.111 at 2011-03-29 14:19:26 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/test.png" for 192.168.0.111 at 2011-03-29 14:19:26 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 192.168.0.111 at 2011-03-29 14:19:31 +0200
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 26ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/logo.png" for 192.168.0.111 at 2011-03-29 14:19:31 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/test.png" for 192.168.0.111 at 2011-03-29 14:19:31 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.0ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110314202931')[0m
