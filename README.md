@@ -1,2 +1,1 @@
-[Root-page](http://init4-defined.heroku.com)
-[products](http://init4-defined.heroku.com/products)
+Link to shop: [Shop](http://init4-defined.heroku.com/products)
