@@ -2433,3 +2433,33 @@ NoMethodError (undefined method `price=' for #<LineItem:0x8942494>):
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/" for 192.168.66.229 at 2011-05-31 14:27:44 +0200
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 4 LIMIT 1[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 4)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (59.0ms)
+Rendered store/index.html.erb within layouts/application (139.5ms)
+Completed 200 OK in 267ms (Views: 144.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/images/test.png" for 192.168.66.229 at 2011-05-31 14:27:45 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/logo.png" for 192.168.66.229 at 2011-05-31 14:27:45 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
