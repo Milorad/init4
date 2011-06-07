@@ -1,11 +1,3 @@
-#---
-# Excerpted from "Agile Web Development with Rails, 4rd Ed.",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
-# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
-#---
 class CartsController < ApplicationController
   # GET /carts
   # GET /carts.xml
@@ -14,7 +6,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @carts }
+      format.xml { render :xml => @carts }
     end
   end
 
@@ -22,15 +14,15 @@ class CartsController < ApplicationController
   # GET /carts/1.xml
   def show
     begin
-      @cart = Cart.find(params[:id])
+       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to store_url, :notice => 'Invalid cart'
+       logger.error "Attempt to access invalid cart #{params[:id]}"
+       redirect_to store_url, :notice => 'Invalid cart'
     else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @cart }
-      end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml { render :xml => @cart }
+    end
     end
   end
 
@@ -41,7 +33,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @cart }
+      format.xml { render :xml => @cart }
     end
   end
 
@@ -58,10 +50,10 @@ class CartsController < ApplicationController
     respond_to do |format|
       if @cart.save
         format.html { redirect_to(@cart, :notice => 'Cart was successfully created.') }
-        format.xml  { render :xml => @cart, :status => :created, :location => @cart }
+        format.xml { render :xml => @cart, :status => :created, :location => @cart }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @cart.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @cart.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -74,10 +66,10 @@ class CartsController < ApplicationController
     respond_to do |format|
       if @cart.update_attributes(params[:cart])
         format.html { redirect_to(@cart, :notice => 'Cart was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @cart.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @cart.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -85,13 +77,13 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.xml
   def destroy
-    @cart = current_cart
+    @cart = Cart.find(params[:id])
     @cart.destroy
     session[:cart_id] = nil
 
     respond_to do |format|
       format.html { redirect_to(store_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 end
