@@ -2463,3 +2463,122 @@ ActionController::RoutingError (No route matches "/images/logo.png"):
   
 
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/images/logo.png" for 192.168.66.229 at 2011-05-31 14:28:25 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/test.png" for 192.168.66.229 at 2011-05-31 14:28:25 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/line_items?product_id=2" for 192.168.66.229 at 2011-05-31 14:28:45 +0200
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"/E/5N627Qnig+z9EnZKBQihvvlg1UyQwT7u4CLzEF9o=", "product_id"=>"2"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 4 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 2 AND ("line_items".cart_id = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 2 ORDER BY title LIMIT 1
+Completed   in 89ms
+
+NoMethodError (undefined method `price=' for #<LineItem:0x90351c0>):
+  app/models/cart.rb:18:in `add_product'
+  app/controllers/line_items_controller.rb:53:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started POST "/line_items?product_id=1" for 192.168.66.229 at 2011-05-31 14:29:57 +0200
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"/E/5N627Qnig+z9EnZKBQihvvlg1UyQwT7u4CLzEF9o=", "product_id"=>"1"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 4 LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."product_id" = 1 AND ("line_items".cart_id = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 1 ORDER BY title LIMIT 1
+Completed   in 58ms
+
+NoMethodError (undefined method `price=' for #<LineItem:0x8854a00>):
+  app/models/cart.rb:18:in `add_product'
+  app/controllers/line_items_controller.rb:53:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.6ms)
+
+
+Started POST "/carts/4" for 192.168.66.229 at 2011-05-31 14:29:57 +0200
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/E/5N627Qnig+z9EnZKBQihvvlg1UyQwT7u4CLzEF9o=", "id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 4 LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 4)
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "carts" WHERE "carts"."id" = 4[0m
+Redirected to http://192.168.0.111:3000/
+Completed 302 Found in 30ms
+
+
+Started GET "/" for 192.168.66.229 at 2011-05-31 14:29:57 +0200
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2011-05-31 12:29:57.715873', '2011-05-31 12:29:57.715873')[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 5)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (17.5ms)
+Rendered store/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 69ms (Views: 35.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/test.png" for 192.168.66.229 at 2011-05-31 14:29:57 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/logo.png" for 192.168.66.229 at 2011-05-31 14:29:57 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/logo.png" for 192.168.66.229 at 2011-05-31 14:30:02 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/test.png" for 192.168.66.229 at 2011-05-31 14:30:02 +0200
+
+ActionController::RoutingError (No route matches "/images/test.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 192.168.0.183 at 2011-06-07 22:04:59 +0200
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (2.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2011-06-07 20:05:00.796928', '2011-06-07 20:05:00.796928')[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 6)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (72.3ms)
+Rendered store/index.html.erb within layouts/application (256.6ms)
+Completed 200 OK in 585ms (Views: 291.9ms | ActiveRecord: 3.5ms)
