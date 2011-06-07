@@ -2582,3 +2582,17 @@ Rendered collection (0.0ms)
 Rendered carts/_cart.html.erb (72.3ms)
 Rendered store/index.html.erb within layouts/application (256.6ms)
 Completed 200 OK in 585ms (Views: 291.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 192.168.0.183 at 2011-06-07 22:09:12 +0200
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.8ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCart Load (0.2ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 6 LIMIT 1[0m
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 6)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (324.6ms)
+Rendered store/index.html.erb within layouts/application (527.5ms)
+Completed 200 OK in 718ms (Views: 535.5ms | ActiveRecord: 2.5ms)
