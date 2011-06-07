@@ -1,4 +1,4 @@
-Depot::Application.routes.draw do
+Init4::Application.routes.draw do
   resources :orders
 
   resources :line_items
